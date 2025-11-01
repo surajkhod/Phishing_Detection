@@ -1,85 +1,104 @@
-import { Brain, Target, Zap, Database } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+// src/components/ModelInfoSection.tsx
 
-const features = [
-  {
-    icon: Brain,
-    title: "Machine Learning",
-    description: "Advanced algorithms trained on millions of URLs to detect phishing patterns",
-  },
-  {
-    icon: Target,
-    title: "99.2% Accuracy",
-    description: "High precision detection with minimal false positives using ensemble methods",
-  },
-  {
-    icon: Zap,
-    title: "Real-time Analysis",
-    description: "Instant results with sub-second response time for immediate protection",
-  },
-  {
-    icon: Database,
-    title: "30+ Features",
-    description: "Analyzes URL structure, domain age, SSL certificates, and more",
-  },
-];
+import React from 'react';
 
-const ModelInfoSection = () => {
+const ModelInfoSection: React.FC = () => {
   return (
-    <section id="model" className="py-20 bg-gradient-to-b from-background to-secondary/20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto space-y-12">
-          {/* Header */}
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl font-bold">How It Works</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Our ML model analyzes multiple website characteristics to provide accurate 
-              phishing detection using state-of-the-art technology
-            </p>
+    <section id="model-info" className="py-20 px-4 bg-gray-900 text-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">🤖 About Our ML Model</h2>
+          <p className="text-xl text-gray-300">
+            Advanced machine learning powered by XGBoost
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {/* Accuracy */}
+          <div className="bg-gray-800 p-6 rounded-xl text-center border border-gray-700 hover:border-blue-500 transition-all">
+            <div className="text-4xl font-bold text-blue-400 mb-2">97%</div>
+            <div className="text-sm text-gray-400">Model Accuracy</div>
           </div>
 
-          {/* Feature Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="border-border bg-card hover:border-primary/50 transition-all duration-300 hover:translate-y-[-4px] hover:glow-primary"
-              >
-                <CardContent className="p-6 space-y-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <feature.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-semibold">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {feature.description}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          {/* Algorithm */}
+          <div className="bg-gray-800 p-6 rounded-xl text-center border border-gray-700 hover:border-green-500 transition-all">
+            <div className="text-2xl font-bold text-green-400 mb-2">XGBoost</div>
+            <div className="text-sm text-gray-400">ML Algorithm</div>
           </div>
 
-          {/* Model Features List */}
-          <div className="bg-card border border-border rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-6">Key Detection Features</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[
-                "URL Structure Analysis",
-                "Domain Registration Info",
-                "SSL Certificate Validation",
-                "Page Content Inspection",
-                "Redirect Chain Analysis",
-                "DNS Record Verification",
-                "Blacklist Cross-referencing",
-                "Brand Impersonation Detection",
-              ].map((item, index) => (
-                <div key={index} className="flex items-center gap-3 p-3 bg-secondary rounded-lg">
-                  <div className="w-2 h-2 rounded-full bg-accent" />
-                  <span className="text-sm">{item}</span>
-                </div>
-              ))}
+          {/* Features */}
+          <div className="bg-gray-800 p-6 rounded-xl text-center border border-gray-700 hover:border-purple-500 transition-all">
+            <div className="text-4xl font-bold text-purple-400 mb-2">17</div>
+            <div className="text-sm text-gray-400">URL Features</div>
+          </div>
+
+          {/* Speed */}
+          <div className="bg-gray-800 p-6 rounded-xl text-center border border-gray-700 hover:border-yellow-500 transition-all">
+            <div className="text-4xl font-bold text-yellow-400 mb-2">&lt;1s</div>
+            <div className="text-sm text-gray-400">Detection Speed</div>
+          </div>
+        </div>
+
+        {/* Features List */}
+        <div className="bg-gray-800 p-8 rounded-2xl border border-gray-700">
+          <h3 className="text-2xl font-bold mb-6 text-center">Analyzed Features</h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="space-y-3">
+              <div className="flex items-start">
+                <span className="text-blue-400 mr-3">✓</span>
+                <span className="text-gray-300">URL Length & Structure</span>
+              </div>
+              <div className="flex items-start">
+                <span className="text-blue-400 mr-3">✓</span>
+                <span className="text-gray-300">Domain Characteristics</span>
+              </div>
+              <div className="flex items-start">
+                <span className="text-blue-400 mr-3">✓</span>
+                <span className="text-gray-300">Special Character Patterns</span>
+              </div>
+              <div className="flex items-start">
+                <span className="text-blue-400 mr-3">✓</span>
+                <span className="text-gray-300">Protocol Security (HTTPS)</span>
+              </div>
+              <div className="flex items-start">
+                <span className="text-blue-400 mr-3">✓</span>
+                <span className="text-gray-300">IP Address Detection</span>
+              </div>
             </div>
+            <div className="space-y-3">
+              <div className="flex items-start">
+                <span className="text-blue-400 mr-3">✓</span>
+                <span className="text-gray-300">Subdomain Analysis</span>
+              </div>
+              <div className="flex items-start">
+                <span className="text-blue-400 mr-3">✓</span>
+                <span className="text-gray-300">Path Complexity</span>
+              </div>
+              <div className="flex items-start">
+                <span className="text-blue-400 mr-3">✓</span>
+                <span className="text-gray-300">Suspicious Patterns</span>
+              </div>
+              <div className="flex items-start">
+                <span className="text-blue-400 mr-3">✓</span>
+                <span className="text-gray-300">URL Shortening Detection</span>
+              </div>
+              <div className="flex items-start">
+                <span className="text-blue-400 mr-3">✓</span>
+                <span className="text-gray-300">And 8 more features...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Tech Stack */}
+        <div className="mt-12 text-center">
+          <h3 className="text-xl font-bold mb-6">Built With</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            <span className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700">Python</span>
+            <span className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700">XGBoost</span>
+            <span className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700">scikit-learn</span>
+            <span className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700">Flask API</span>
+            <span className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700">React + TypeScript</span>
           </div>
         </div>
       </div>

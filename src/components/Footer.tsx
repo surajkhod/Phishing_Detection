@@ -2,10 +2,10 @@ import { Shield, Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   const teamMembers = [
-    "Aarav Sharma",
-    "Priya Patel", 
-    "Rohan Desai",
-    "Ananya Singh"
+    "Suraj Khod",
+    "Ghansham More", 
+    "Sarthak Sarikar",
+    "Saniya Sheikh"
   ];
 
   return (
